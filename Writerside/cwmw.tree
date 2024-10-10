@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="cwmw"
+                 name="Content Warning Modding Wiki"
+                 start-page="Initial-Setup.md">
+
+    <toc-element topic="Creating-Mods.md">
+        <toc-element topic="Initial-Setup.md"/>
+        <toc-element topic="Starting-A-Mod.md"/>
+    </toc-element>
+    <toc-element topic="Modding-Topics.md">
+        <toc-element topic="Fundamentals.md">
+            <toc-element topic="Logging.md"/>
+            <toc-element topic="Reading-Game-Code.md"/>
+            <toc-element topic="Patching-Code.md"/>
+        </toc-element>
+        <toc-element topic="Intermediate.md">
+            <toc-element topic="Custom-Configs.md"/>
+            <toc-element topic="Asset-Bundling.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="Modding-APIs.md">
+        <toc-element topic="Overview.md"/>
+        <toc-element topic="Programming-APIs.md">
+            <toc-element topic="ContentLib.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="Additional-Info.md"/>
+</instance-profile>
