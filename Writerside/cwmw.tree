@@ -6,6 +6,11 @@
                  name="Content Warning Modding Wiki"
                  start-page="Initial-Setup.md">
 
+    <toc-element topic="Installing-Mods.md">
+        <toc-element topic="Using-r2modman.md"/>
+        <toc-element topic="Sharing-r2modman-Profiles.md"/>
+        <toc-element topic="Configuring-Mods.md"/>
+    </toc-element>
     <toc-element topic="Creating-Mods.md">
         <toc-element topic="Initial-Setup.md"/>
         <toc-element topic="Starting-A-Mod.md"/>
