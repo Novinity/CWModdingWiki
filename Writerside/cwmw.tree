@@ -4,8 +4,9 @@
 
 <instance-profile id="cwmw"
                  name="Content Warning Modding Wiki"
-                 start-page="Initial-Setup.md">
+                 start-page="Getting-Started.md">
 
+    <toc-element topic="Getting-Started.md"/>
     <toc-element topic="Installing-Mods.md">
         <toc-element topic="Using-r2modman.md"/>
         <toc-element topic="Sharing-r2modman-Profiles.md"/>
