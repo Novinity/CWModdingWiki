@@ -18,7 +18,7 @@ The asset bundling window can be opened by going to ``Window -> Asset Bundle Bro
 > 
 {style="warning"}
 
-## Using You Asset Bundle
+## Using Your Asset Bundle
 After making your asset bundle, you will need to access it via plugin code. The easiest way to do this is by simply copying the asset bundle that was generated in the above steps into the same folder as your plugin .dll and load it with the following code:
 
 ```C#
