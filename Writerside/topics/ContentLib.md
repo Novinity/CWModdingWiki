@@ -7,7 +7,7 @@ Plans for the future also include custom items, maps, cosmetics, and sponsors.
 To begin with ContentLib development, you will need the following mods:
 
 * [BepInExPack by BepInEx](https://thunderstore.io/c/lethal-company/p/BepInEx/BepInExPack/)
-* [ContentLib by Novinity](https://example.com/)
+* [ContentLib by Novinity](https://thunderstore.io/c/content-warning/p/Novinity/ContentLib/)
 
 These can be installed with a mod manager such as r2modman or Thunderstore manager, or installed manually.
 
