@@ -30,7 +30,12 @@
     <toc-element topic="Modding-APIs.md">
         <toc-element topic="Overview.md"/>
         <toc-element topic="Programming-APIs.md">
-            <toc-element topic="ContentLib.md"/>
+            <toc-element topic="ContentLib.md">
+                <toc-element topic="Custom-Monsters.md">
+                    <toc-element topic="Using-The-Project.md"/>
+                    <toc-element topic="Coding-The-AI.md"/>
+                </toc-element>
+            </toc-element>
         </toc-element>
     </toc-element>
     <toc-element topic="Additional-Info.md"/>
