@@ -9,3 +9,5 @@ For this example, the AssetRipper project will be used.
 haven't written the rest lol
 
 if you manage to do it all by yourself before i finish this page, you get a shoutout
+
+for the time being, i recommend looking at the other monster prefabs to see how they're set up.

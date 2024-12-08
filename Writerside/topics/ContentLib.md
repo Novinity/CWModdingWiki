@@ -96,7 +96,8 @@ public class MyPlugin : BaseUnityPlugin
 This is also a quick way of ensuring you've correctly added the ContentLib as a package reference, as otherwise this will give you an error.
 
 ## Content Warning Unity project
-In order to make mods for ContentLib, you will almost certainly need to use a decompiled Content Warning Unity project so you can access the game scripts. For this you should use _.
+In order to make mods for ContentLib, you will almost certainly need to use a decompiled Content Warning Unity project so you can access the game scripts.
+You should also import your built mod DLL into the Unity project so you can access its scripts.
 
 ## Specific tutorials
 Each page below goes through the full process of creating a mod for the given part of Content Warning via ContentLib. These will use the template project above as a base.
