@@ -1,0 +1,48 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#EB6237"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="built-on" content="2024-12-08T13:21:29.5938097"><title>Registering the Monster | Content Warning Modding Wiki</title><script type="application/json" id="virtual-toc-data">[]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b518/app.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Registering the Monster | Content Warning Modding Wiki"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Content Warning Modding Wiki Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/cwmodding.wiki/1.0/registering-the-monster.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Registering the Monster | Content Warning Modding Wiki"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/cwmodding.wiki/1.0/registering-the-monster.html#webpage",
+    "url": "writerside-documentation/cwmodding.wiki/1.0/registering-the-monster.html",
+    "name": "Registering the Monster | Content Warning Modding Wiki",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentationcwmodding.wiki/#website",
+    "url": "writerside-documentationcwmodding.wiki/",
+    "name": "Content Warning Modding Wiki Help"
+}</script><!-- End Schema.org --></head><body data-id="Registering-the-Monster" data-main-title="Registering the Monster" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="Modding-APIs.md|Modding APIs///Programming-APIs.md|Programming APIs///ContentLib.md|ContentLib///Custom-Monsters.md|Custom Monsters"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Content Warning Modding Wiki 1.0 Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Registering-the-Monster" id="Registering-the-Monster.md">Registering the Monster</h1><p id="-9yh6cs_3">So you've managed to make a monster in Unity and code its AI. Great! Now time to actually add it into the game.</p><p id="-9yh6cs_4">First thing's first, place your exported asset bundle into the folder where your exported mod will go, ensure they are in the same directory.</p><p id="-9yh6cs_5">Now, open up your main <code class="code" id="-9yh6cs_16">Plugin.cs</code> file in your chosen code editor. The first thing we need to do in our code is unpack the asset bundle. ContentLib makes this easy, simply call the <code class="code" id="-9yh6cs_17">LoadAssetBundle</code> method from the mod's <code class="code" id="-9yh6cs_18">BundleHelper</code>, as follows:</p><div class="code-block" data-lang="csharp">
+public static AssetBundle MyAssetBundle;
+private void Awake() {
+    ...
+    MyAssetBundle = ContentLib.Modules.BundleHelper.LoadAssetBundle(&quot;your asset bundle name&quot;);
+}
+</div><p id="-9yh6cs_7">Next you want to load your monster object from your asset bundle. Make sure you remember the name of the prefab!</p><div class="code-block" data-lang="csharp">
+private void Awake() {
+    ...
+    GameObject MyMonsterObject = MyAssetBundle.LoadAsset&lt;GameObject&gt;(&quot;MonsterObject.prefab&quot;);
+}
+</div><p id="-9yh6cs_9">Finally, you want to register the monster and its content event with ContentLib:</p><div class="code-block" data-lang="csharp">
+private void Awake() {
+    ...
+    ContentLib.Modules.Monsters.CustomMonster monster = ContentLib.Modules.Monsters.RegisterMonster(new ContentLib.Modules.Monsters.CustomMonster(MyMonsterObject, 100));
+    ContentLib.Modules.ContentHandler.RegisterEvent(new MyMonstersContentEvent());
+}
+</div><p id="-9yh6cs_11">Altogether, it should look similar to this:</p><div class="code-block" data-lang="csharp">
+public static AssetBundle MyAssetBundle;
+private void Awake() {
+    MyAssetBundle = ContentLib.Modules.BundleHelper.LoadAssetBundle(&quot;your asset bundle name&quot;);
+    GameObject MyMonsterObject = MyAssetBundle.LoadAsset&lt;GameObject&gt;(&quot;MonsterObject.prefab&quot;);
+    ContentLib.Modules.Monsters.CustomMonster monster = ContentLib.Modules.Monsters.RegisterMonster(new ContentLib.Modules.Monsters.CustomMonster(MyMonsterObject, 100));
+    ContentLib.Modules.ContentHandler.RegisterEvent(new MyMonstersContentEvent());
+}
+</div><p id="-9yh6cs_13">And that's it! Start the game and your monster should be spawning, assuming there are no issues with its other code or prefab.</p><p id="-9yh6cs_14">Alternatively, you can quickly register all monsters in a bundle with one line. This is quicker, but allows for less customization.</p><div class="code-block" data-lang="csharp">
+public static AssetBundle MyAssetBundle;
+private void Awake() {
+    ...
+    MyAssetBundle = ContentLib.Modules.BundleHelper.LoadAssetBundle(&quot;your asset bundle name&quot;);
+    ContentLib.Modules.Monsters.RegisterAllInBundle(MyAssetBundle);
+}
+</div><div class="last-modified">Last modified: 08 December 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="creating-a-content-event.html" class="navigation-links__prev">Creating A Content Event</a><a href="additional-info.html" class="navigation-links__next">Additional Info</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b518/app.js"></script></body></html>
